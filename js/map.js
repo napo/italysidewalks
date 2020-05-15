@@ -52,7 +52,7 @@ var map = L.map('map',
 		zoomControl: false,
 		dragging: true,
 		maxZoom: 18,
-		minZoom: 9 
+		minZoom: 7 
 	});
 
 

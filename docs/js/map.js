@@ -56,6 +56,7 @@ var map = L.map('map',
 	});
 
 
+
 var cartodbAttribution = 'Map tiles by <a href="http://cartodb.com/attributions#basemaps">CartoDB</a>, under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Data by <a href="http://www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.';
 
 var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
@@ -66,7 +67,7 @@ var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/d
 var sidewalksUrl = "sidewalks/{z}/{x}/{y}.pbf";
 var sidewalksOps = {
 	rendererFactory: L.canvas.tile,
-	attribution: 'data elaborated from <a href="https://geodati.gov.it/geoportalRNDTPA/catalog/search/resource/details.page?uuid=r_basili%3A26e21af8%3A14ff44204d8%3A18ea">Regione Basilicata</a> under IODL 2.0',
+	attribution: 'data elaborated from <a href="https://dati.gov.it">italian national open data portal</a>',
 	vectorTileLayerStyles: vectorTileStyling,
 	interactive: true
 	};
@@ -114,7 +115,7 @@ function addPopup(e) {
          '<hr style="border: 2px solid ' + lineColor + ' ;"/>' +
         '<div class="message">' + message + '</div>'
 
-	popup.setLatLng(e.latlng)
+		popup.setLatLng(e.latlng)
       	popup.setContent(description)
       	popup.addTo(map)
  }
@@ -123,8 +124,6 @@ sidewalksLayer.on('mouseover', function(e) {
 	addPopup(e);
 });
 
-
-var hash = new L.Hash(map);
 
 var redStyle = {
   "color": "c4c4c4",
@@ -141,4 +140,5 @@ var overlayMaps = {
 */
 italy  = [41.458,12.706]
 map.setView(italy, 8);
+var hash = new L.Hash(map);
 new L.Control.Zoom({ position: 'topright' }).addTo(map);

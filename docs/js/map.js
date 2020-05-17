@@ -51,7 +51,7 @@ var map = L.map('map',
 	{ 
 		zoomControl: false,
 		dragging: true,
-		maxZoom: 18,
+		maxZoom: 19,
 		minZoom: 7 
 	});
 
@@ -64,7 +64,7 @@ var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/d
 		//opacity: 1
 }).addTo(map);
 
-var sidewalksUrl = "sidewalks/{z}/{x}/{y}.pbf";
+var sidewalksUrl = "http://sidewalkswidths.it/sidewalks/{z}/{x}/{y}.pbf";
 var sidewalksOps = {
 	rendererFactory: L.canvas.tile,
 	attribution: 'data elaborated from <a href="https://dati.gov.it">italian national open data portal</a>',
@@ -142,3 +142,4 @@ italy  = [41.458,12.706]
 map.setView(italy, 8);
 var hash = new L.Hash(map);
 new L.Control.Zoom({ position: 'topright' }).addTo(map);
+L.Control.geocoder().addTo(map);
